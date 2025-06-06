@@ -58,7 +58,7 @@ public class TransactionProducer {
         prop.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVERS);
         prop.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         prop.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
-        prop.put(ProducerConfig.BATCH_SIZE_CONFIG,1310);
+        prop.put(ProducerConfig.BATCH_SIZE_CONFIG,100);
         prop.put(ProducerConfig.LINGER_MS_CONFIG, 10);
         prop.put(ProducerConfig.COMPRESSION_TYPE_CONFIG,"snappy");
         prop.put(ProducerConfig.ACKS_CONFIG, "1");

@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: minio_transaction
+    meta:
+      external_location: "s3a://spark-kafka-source/*/*.parquet"
+    tables: 
+      - name: transaction
+
+            
+            

@@ -1,0 +1,42 @@
+
+version: 2
+
+models:
+  - name: raw_transaction_view
+    tests: 
+      - dbt_utils.expression_is_true:
+          expression: "quantity > 0"
+          config:
+            severity: error
+      - dbt_utils.expression_is_true:
+          expression: "amount > 0"
+          config: 
+            severity: error
+    description: "raw transaction data from kafka"
+    columns:
+      - name: transaction_id
+        tests: 
+          - not_null
+          - unique
+      - name: merchant_id
+        tests:
+          - not_null
+      - name: product
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['iphone', 'acer predator', 'sony dslr', 'secret lab gaming chair']
+      - name: quantity
+      - name: customer_id
+        tests: 
+          - not_null
+      - name: amount
+      - name: transaction_time
+      - name: payment_type
+        tests:
+          - accepted_values:
+              values: ['credit_card', 'digital_wallet']
+      - name: date
+      - name: time
+
+
