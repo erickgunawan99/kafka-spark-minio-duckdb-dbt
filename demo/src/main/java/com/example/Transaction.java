@@ -61,7 +61,7 @@ public class Transaction {
         trans.setMerchantId(1 + random.nextInt(100));
         trans.setProduct(newList.get(index));
         trans.setCustomerId(2 + random.nextInt(1000));
-        trans.setQuantity(random.nextInt(5));
+        trans.setQuantity(random.nextInt(1, 5));
         trans.setAmount(120 + (495 * (random.nextDouble())));
         trans.setTransactionTime(FORMATTED_DATE);
         trans.setPaymentType(random.nextBoolean() ? "credit_card": "digital_wallet");
