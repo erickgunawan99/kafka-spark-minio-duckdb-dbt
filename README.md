@@ -5,6 +5,7 @@ Tools:
 - Apache Spark
 - DBT
 - Duckdb
+- Minio as an Object Storage (Open source AWS S3 compatible)
 
 
 Process:
